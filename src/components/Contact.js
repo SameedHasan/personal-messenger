@@ -70,13 +70,13 @@ const Contact = () => {
           p={2}
         >
           <Stack direction="row" alignItems={"center"} spacing={2}>
-            <Avatar src={faker.image.avatar()} sx={{ height: 44, width: 44 }} />
+            <Avatar src={faker.image.avatar()} sx={{ height: 64, width: 64 }} />
             <Stack spacing={0.5}>
-              <Typography variant="article" fontWeight={500}>
+              <Typography variant="article" fontWeight={600}>
                 {faker.name.fullName()}
               </Typography>
-              <Typography variant="body2" fontWeight={400}>
-                {"+91 62543 28 739"}
+              <Typography variant="body2" fontWeight={500}>
+                {"+923355520338"}
               </Typography>
             </Stack>
           </Stack>
