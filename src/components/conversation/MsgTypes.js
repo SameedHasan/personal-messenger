@@ -35,8 +35,8 @@ const TextMsg = ({ el, menu }) => {
           {el.message}
         </Typography>
       </Box>
-      <MessageOption />
-      {/* {menu && <MessageOption />} */}
+      {/* <MessageOption /> */}
+      {menu && <MessageOption />}
     </Stack>
   );
 };
@@ -69,8 +69,8 @@ const MediaMsg = ({ el, menu }) => {
           </Typography>
         </Stack>
       </Box>
-      <MessageOption />
-      {/* {menu && <MessageOption />} */}
+      {/* <MessageOption /> */}
+      {menu && <MessageOption />}
     </Stack>
   );
 };
@@ -114,8 +114,8 @@ const DocMsg = ({ el, menu }) => {
           </Typography>
         </Stack>
       </Box>
-      <MessageOption />
-      {/* {menu && <MessageOption />} */}
+      {/* <MessageOption /> */}
+      {menu && <MessageOption />}
     </Stack>
   );
 };
@@ -172,8 +172,8 @@ const LinkMsg = ({ el, menu }) => {
           </Stack>
         </Stack>
       </Box>
-      <MessageOption />
-      {/* {menu && <MessageOption />} */}
+      {/* <MessageOption /> */}
+      {menu && <MessageOption />}
     </Stack>
   );
 };
@@ -216,8 +216,8 @@ const ReplyMsg = ({ el, menu }) => {
           </Typography>
         </Stack>
       </Box>
-      <MessageOption />
-      {/* {menu && <MessageOption />} */}
+      {/* <MessageOption /> */}
+      {menu && <MessageOption />}
     </Stack>
   );
 };
