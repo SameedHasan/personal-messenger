@@ -141,7 +141,7 @@ const Footer = () => {
           theme.palette.mode === "light"
             ? "#F8FAFF"
             : theme.palette.background.paper,
-        boxShadow: "0px 0px 2px rgba(0, .0, .0, .0.25)",
+        boxShadow: "0px 0px 2px rgb(0 0 0 / 25%)",
       }}
     >
       <Stack direction={"row"} alignItems="center" spacing={3}>
