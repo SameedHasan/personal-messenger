@@ -128,6 +128,7 @@ const Chats = () => {
       sx={{
         position: "relative",
         width: 320,
+        // minWidth: 320,
         backgroundColor:
           theme.palette.mode === "light"
             ? "#F8FAFF"
@@ -135,7 +136,7 @@ const Chats = () => {
         boxShadow: "0px 0px 2px rgba(0,0,0,0.25)",
       }}
     >
-      <Stack p={3} spacing={2} sx={{ height: "100vh" }}>
+      <Stack p={2} spacing={2} sx={{ height: "100vh" }}>
         <Stack
           direction="row"
           alignItems="center"

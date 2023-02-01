@@ -17,7 +17,10 @@ const GeneralApp = () => {
       <Box
         sx={{
           height: "100%",
-          width: `100%`,
+          // width: `100%`,
+          width: sidebar.open
+            ? `calc(100vw - ${740}px)`
+            : `calc(100vw - ${420}px)`,
           // width: "calc(100vw-740px)",
           backgroundColor:
             theme.palette.mode === "light"
