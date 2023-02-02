@@ -105,7 +105,7 @@ const LoginForm = () => {
         size="large"
         type="submit"
         variant="contained"
-        loading={isSubmitSuccessful || isSubmitting}
+        // loading={isSubmitSuccessful || isSubmitting}
         sx={{
           bgcolor: "text.primary",
           color: (theme) =>
