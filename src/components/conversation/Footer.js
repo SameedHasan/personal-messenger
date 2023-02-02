@@ -81,8 +81,8 @@ const ChatInput = ({ setOpenPicker, openPicker }) => {
                 display: openActions ? "inline-block" : "none",
               }}
             >
-              {Actions.map((el) => (
-                <Tooltip placement="right" title={el.title}>
+              {Actions.map((el, i) => (
+                <Tooltip placement="right" title={el.title} key={i}>
                   <Fab
                     onClick={() => {
                       setOpenActions(!openActions);
@@ -100,7 +100,7 @@ const ChatInput = ({ setOpenPicker, openPicker }) => {
               ))}
             </Stack>
 
-            <InputAdornment>
+            <InputAdornment position="start">
               <IconButton
                 onClick={() => {
                   setOpenActions(!openActions);
@@ -113,7 +113,7 @@ const ChatInput = ({ setOpenPicker, openPicker }) => {
         ),
         endAdornment: (
           <Stack sx={{ position: "relative" }}>
-            <InputAdornment>
+            <InputAdornment position="end">
               <IconButton
                 onClick={() => {
                   setOpenPicker(!openPicker);

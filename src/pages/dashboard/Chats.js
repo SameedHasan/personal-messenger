@@ -179,13 +179,13 @@ const Chats = () => {
                 Pinned
               </Typography>
               {ChatList.filter((el) => el.pinned).map((el, idx) => {
-                return <ChatElement {...el} />;
+                return <ChatElement {...el} key={idx} />;
               })}
               <Typography variant="subtitle2" sx={{ color: "#676667" }}>
                 All Chats
               </Typography>
               {ChatList.filter((el) => !el.pinned).map((el, idx) => {
-                return <ChatElement {...el} />;
+                return <ChatElement {...el} key={idx} />;
               })}
             </Stack>
           </Scrollbars>
