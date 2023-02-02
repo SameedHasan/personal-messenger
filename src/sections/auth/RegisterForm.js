@@ -12,16 +12,17 @@ import {
   Link,
   Stack,
 } from "@mui/material";
-import { Link as RouterLink } from "react-router-dom";
 
 import { Eye, EyeSlash } from "phosphor-react";
 // import { LoadingButton } from "@mui/lab";
 import { RHFTextfield } from "../../components/hook-form";
 
-const LoginForm = () => {
+const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const LoginSchema = Yup.object().shape({
+    firstName: Yup.string().required("First name required"),
+    lastName: Yup.string().required("Last name required"),
     email: Yup.string()
       .required("Email is required")
       .email("Email must be a valid email address"),
@@ -29,6 +30,8 @@ const LoginForm = () => {
   });
 
   const defaultValues = {
+    firstName: "Sameed",
+    lastName: "Hasan",
     email: "sameedh41@gmail.com",
     password: "sameed1234",
   };
@@ -48,7 +51,7 @@ const LoginForm = () => {
   const onSubmit = async (data) => {
     try {
       // submit data to backend
-      console.log("submitted");
+      console.log("registered");
     } catch (error) {
       console.error(error);
       reset();
@@ -65,7 +68,10 @@ const LoginForm = () => {
         {!!errors.afterSubmit && (
           <Alert severity="error">{errors.afterSubmit.message}</Alert>
         )}
-
+        <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
+          <RHFTextfield name="firstName" label="First name" />
+          <RHFTextfield name="lastName" label="Last name" />
+        </Stack>
         <RHFTextfield name="email" label="Email address" />
 
         <RHFTextfield
@@ -87,18 +93,6 @@ const LoginForm = () => {
         />
       </Stack>
 
-      <Stack alignItems="flex-end" sx={{ my: 2 }}>
-        <Link
-          variant="body2"
-          color="inherit"
-          underline="always"
-          component={RouterLink}
-          to={"/auth/reset-password"}
-        >
-          Forgot password?
-        </Link>
-      </Stack>
-
       <Button
         fullWidth
         color="inherit"
@@ -115,12 +109,13 @@ const LoginForm = () => {
             color: (theme) =>
               theme.palette.mode === "light" ? "common.white" : "grey.800",
           },
+          marginTop: 3,
         }}
       >
-        Login
+        Create Account
       </Button>
     </FormProvider>
   );
 };
 
-export default LoginForm;
+export default RegisterForm;
