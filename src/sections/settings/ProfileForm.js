@@ -3,10 +3,12 @@ import * as Yup from "yup";
 // form
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import FormProvider from "../../../components/hook-form/FormProvider";
-import { RHFTextField, RHFUploadAvatar } from "../../../components/hook-form";
-import { Stack } from "@mui/material";
-import { LoadingButton } from "@mui/lab";
+// import FormProvider from "../../../components/hook-form/FormProvider";
+// import { RHFTextfield, RHFUploadAvatar } from "../../../components/hook-form";
+import { Button, Stack } from "@mui/material";
+import { RHFTextfield } from "../../components/hook-form";
+import FormProvider from "../../components/hook-form/FormProvider";
+// import { LoadingButton } from "@mui/lab";
 
 const ProfileForm = () => {
   const ProfileSchema = Yup.object().shape({
@@ -63,35 +65,35 @@ const ProfileForm = () => {
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
       <Stack spacing={4}>
-        <RHFUploadAvatar
+        {/* <RHFUploadAvatar
           name="avatarUrl"
           maxSize={3145728}
           onDrop={handleDrop}
-        />
+        /> */}
 
-        <RHFTextField
+        <RHFTextfield
           helperText={"This name is visible to your contacts"}
           name="name"
           label="Full Name"
         />
-        <RHFTextField
+        <RHFTextfield
           multiline
-          rows={4}
+          rows={3}
           maxRows={5}
           name="about"
           label="About"
         />
 
         <Stack direction={"row"} justifyContent="end">
-          <LoadingButton
+          <Button
             color="primary"
             size="large"
             type="submit"
             variant="contained"
-            loading={isSubmitSuccessful || isSubmitting}
+            // loading={isSubmitSuccessful || isSubmitting}
           >
             Save
-          </LoadingButton>
+          </Button>
         </Stack>
       </Stack>
     </FormProvider>
