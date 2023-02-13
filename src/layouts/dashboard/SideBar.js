@@ -1,14 +1,6 @@
-import {
-  Avatar,
-  Box,
-  IconButton,
-  Menu,
-  MenuItem,
-  Stack,
-  Switch,
-} from "@mui/material";
+import { Avatar, Box, IconButton, Menu, MenuItem, Stack } from "@mui/material";
 import Divider from "@mui/material/Divider";
-import { styled, useTheme } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 import { Gear } from "phosphor-react";
 import React, { useState } from "react";
 import Logo from "../../assets/Images/logo.ico";
@@ -29,6 +21,18 @@ const getPath = (index) => {
       return "/call";
     case 3:
       return "/settings";
+    default:
+      break;
+  }
+};
+const getMenuPath = (index) => {
+  switch (index) {
+    case 0:
+      return "/profile";
+    case 1:
+      return "/settings";
+    case 2:
+      return "/auth/login";
     default:
       break;
   }
@@ -170,7 +174,13 @@ const SideBar = () => {
           >
             <Stack spacing={1} px={1}>
               {Profile_Menu.map((el, i) => (
-                <MenuItem onClick={handleClose} key={i}>
+                <MenuItem
+                  onClick={() => {
+                    handleClose();
+                    navigate(getMenuPath(i));
+                  }}
+                  key={i}
+                >
                   <Stack
                     width={100}
                     direction="row"

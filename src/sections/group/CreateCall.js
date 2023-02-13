@@ -61,17 +61,10 @@ const CreateCallForm = ({ handleClose }) => {
     defaultValues,
   });
 
-  const {
-    reset,
-    watch,
-    setValue,
-    handleSubmit,
-    formState: { isSubmitting, isValid },
-  } = methods;
+  const { handleSubmit } = methods;
 
   const onSubmit = async (data) => {
     try {
-      //  API Call
       console.log("DATA", data);
     } catch (error) {
       console.error(error);
@@ -105,7 +98,7 @@ const CreateCallForm = ({ handleClose }) => {
     </FormProvider>
   );
 };
-
+console.log("object", CreateCallForm);
 const CreateCall = ({ open, handleClose }) => {
   return (
     <Dialog

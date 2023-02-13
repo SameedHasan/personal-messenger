@@ -7,7 +7,6 @@ import DashboardLayout from "../layouts/dashboard";
 // config
 import { DEFAULT_PATH } from "../config";
 import LoadingScreen from "../components/LoadingScreen";
-import MainLayout from "../layouts/main";
 import AuthLayout from "../layouts/auth";
 // import Settings from "../pages/dashboard/Settings";
 

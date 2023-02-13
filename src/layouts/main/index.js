@@ -1,7 +1,6 @@
-import { Container, Stack } from "@mui/material";
 import React from "react";
-import { Navigate, Outlet } from "react-router-dom";
-import Logo from "../../assets/Images/logo.ico";
+import { Outlet } from "react-router-dom";
+
 const MainLayout = () => {
   return (
     <>

@@ -1,35 +1,17 @@
 import React from "react";
 import { useTheme } from "@mui/material/styles";
-import {
-  Box,
-  IconButton,
-  Stack,
-  Typography,
-  Tabs,
-  Tab,
-  Grid,
-} from "@mui/material";
+import { Box, IconButton, Stack, Typography } from "@mui/material";
 import { ArrowLeft } from "phosphor-react";
 // import useResponsive from "../../hooks/useResponsive";
 import { useDispatch } from "react-redux";
 import { UpdateSidebarType } from "../redux/slices/app";
-import { faker } from "@faker-js/faker";
-import { DocMsg, LinkMsg } from "./conversation/MsgTypes";
-import { Shared_docs, Shared_links } from "../data";
+
 import Message from "./conversation/Message";
 
 const StarredMessages = () => {
   const dispatch = useDispatch();
 
   const theme = useTheme();
-
-  //   const isDesktop = useResponsive("up", "md");
-
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
 
   return (
     <Box sx={{ width: 320, maxHeight: "100vh" }}>
@@ -71,7 +53,6 @@ const StarredMessages = () => {
           spacing={3}
           p={3}
         >
-          {/* <Conversation starred={true} /> */}
           <Message />
         </Stack>
       </Stack>

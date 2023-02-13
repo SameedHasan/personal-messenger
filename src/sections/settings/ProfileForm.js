@@ -1,7 +1,7 @@
-import React, { useCallback } from "react";
+import React from "react";
 import * as Yup from "yup";
 // form
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 // import FormProvider from "../../../components/hook-form/FormProvider";
 // import { RHFTextfield, RHFUploadAvatar } from "../../../components/hook-form";
@@ -28,15 +28,14 @@ const ProfileForm = () => {
   });
 
   const {
-    reset,
-    watch,
-    control,
-    setValue,
+    // watch,
+    // control,
+    // setValue,
     handleSubmit,
-    formState: { isSubmitting, isSubmitSuccessful },
+    // formState: { isSubmitting, isSubmitSuccessful },
   } = methods;
 
-  const values = watch();
+  // const values = watch();
 
   const onSubmit = async (data) => {
     try {
@@ -47,20 +46,20 @@ const ProfileForm = () => {
     }
   };
 
-  const handleDrop = useCallback(
-    (acceptedFiles) => {
-      const file = acceptedFiles[0];
+  // const handleDrop = useCallback(
+  //   (acceptedFiles) => {
+  //     const file = acceptedFiles[0];
 
-      const newFile = Object.assign(file, {
-        preview: URL.createObjectURL(file),
-      });
+  //     const newFile = Object.assign(file, {
+  //       preview: URL.createObjectURL(file),
+  //     });
 
-      if (file) {
-        setValue("avatarUrl", newFile, { shouldValidate: true });
-      }
-    },
-    [setValue]
-  );
+  //     if (file) {
+  //       setValue("avatarUrl", newFile, { shouldValidate: true });
+  //     }
+  //   },
+  //   [setValue]
+  // );
 
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>

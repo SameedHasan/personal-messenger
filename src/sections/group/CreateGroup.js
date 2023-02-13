@@ -54,11 +54,8 @@ const CreateGroupForm = ({ handleClose }) => {
   });
 
   const {
-    reset,
-    watch,
-    setValue,
     handleSubmit,
-    formState: { isSubmitting, isValid },
+    // formState: { isSubmitting, isValid },
   } = methods;
 
   const onSubmit = async (data) => {

@@ -7,17 +7,16 @@ import {
   Link,
   Divider,
 } from "@mui/material";
-import { MagnifyingGlass, Phone, Plus } from "phosphor-react";
+import { MagnifyingGlass, Phone } from "phosphor-react";
 import { useTheme } from "@mui/material/styles";
 import { SimpleBarStyle } from "../../components/Scrollbar";
-import { CallList, ChatList } from "../../data";
-import ChatElement from "../../components/ChatElement";
+import { CallList } from "../../data";
+
 import {
   Search,
   SearchIconWrapper,
   StyledInputBase,
 } from "../../components/search";
-import CreateGroup from "../../sections/group/CreateGroup";
 import { CallLogElement } from "../../components/CallElement";
 import CreateCall from "../../sections/group/CreateCall";
 

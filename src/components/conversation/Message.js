@@ -1,7 +1,7 @@
 import { Box, Stack } from "@mui/material";
 import React from "react";
 import { Chat_History } from "../../data";
-import Menu from "../../theme/overrides/Menu";
+
 import {
   DocMsg,
   LinkMsg,
