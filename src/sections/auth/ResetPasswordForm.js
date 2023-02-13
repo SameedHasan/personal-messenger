@@ -22,7 +22,7 @@ export default function ResetPasswordForm() {
 
   const {
     handleSubmit,
-    formState: { isSubmitting },
+    // formState: { isSubmitting },
   } = methods;
 
   const onSubmit = async (data) => {

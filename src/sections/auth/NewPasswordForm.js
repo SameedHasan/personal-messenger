@@ -36,7 +36,7 @@ export default function NewPasswordForm() {
 
   const {
     handleSubmit,
-    formState: { isSubmitting, errors },
+    // formState: { isSubmitting, errors },
   } = methods;
 
   const onSubmit = async (data) => {
