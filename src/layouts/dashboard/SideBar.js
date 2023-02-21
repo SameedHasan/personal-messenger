@@ -10,6 +10,8 @@ import useSettings from "../../hooks/useSettings";
 import AntSwitch from "../../components/AntSwitch";
 import { Profile_Menu } from "../../data/index";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { LogoutUser } from "../../redux/slices/auth.js";
 
 const getPath = (index) => {
   switch (index) {
@@ -38,6 +40,7 @@ const getMenuPath = (index) => {
   }
 };
 const SideBar = () => {
+  const dispatch = useDispatch();
   const theme = useTheme();
   const navigate = useNavigate();
   const [selected, setSelected] = useState(0);
@@ -177,6 +180,10 @@ const SideBar = () => {
                 <MenuItem
                   onClick={() => {
                     handleClose();
+                    console.log(i);
+                    if (i === 2) {
+                      dispatch(LogoutUser());
+                    }
                     navigate(getMenuPath(i));
                   }}
                   key={i}
