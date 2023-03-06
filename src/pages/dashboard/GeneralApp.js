@@ -1,4 +1,4 @@
-import { Box, Stack } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import React from "react";
 import Chats from "./Chats";
@@ -7,10 +7,11 @@ import Contact from "../../components/Contact";
 import { useSelector } from "react-redux";
 import Media from "../../components/SharedMessages";
 import StarredMessages from "../../components/StarredMessages";
-
+import { Link, useSearchParams } from "react-router-dom";
+import NoChat from "../../assets/Illustration/NoChat";
 const GeneralApp = () => {
   const theme = useTheme();
-  const { sidebar } = useSelector((store) => store.app);
+  const { sidebar, room_id, chat_type } = useSelector((store) => store.app);
   // console.log(app);
   return (
     <Stack direction={"row"} sx={{ width: "100%" }}>
@@ -30,7 +31,30 @@ const GeneralApp = () => {
               : theme.palette.background.paper,
         }}
       >
-        <Conversation />
+        {room_id !== null && chat_type === "individual" ? (
+          <Conversation />
+        ) : (
+          <Stack
+            spacing={2}
+            sx={{ height: "100%", width: "100%" }}
+            alignItems="center"
+            justifyContent={"center"}
+          >
+            <NoChat />
+            <Typography variant="subtitle2">
+              Select a conversation or start a{" "}
+              <Link
+                style={{
+                  color: theme.palette.primary.main,
+                  textDecoration: "none",
+                }}
+                to="/"
+              >
+                new one
+              </Link>
+            </Typography>
+          </Stack>
+        )}
       </Box>
       {sidebar.open &&
         (() => {
